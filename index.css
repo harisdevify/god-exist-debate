@@ -31,32 +31,45 @@
   --r-lg: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #181714;
-    --surface: #222118;
-    --surface-2: #2c2b22;
-    --text: #f0ece3;
-    --text-2: #a09b8e;
-    --text-3: #6e6a5f;
-    --border: rgba(255, 255, 255, 0.08);
-    --border-2: rgba(255, 255, 255, 0.14);
-
-    --teal-bg: #04342c;
-    --teal-t: #9fe1cb;
-    --teal-b: #0f6e56;
-
-    --coral-bg: #4a1b0c;
-    --coral-t: #f5c4b3;
-    --coral-b: #993c1d;
-
-    --purple-bg: #26215c;
-    --purple-t: #cecbf6;
-    --purple-b: #534ab7;
-
-    --gold-bg: #412402;
-    --gold-b: #854f0b;
-  }
+html.dark {
+  --bg: #181714;
+  --surface: #222118;
+  --surface-2: #2c2b22;
+  --text: #f0ece3;
+  --text-2: #a09b8e;
+  --text-3: #6e6a5f;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-2: rgba(255, 255, 255, 0.14);
+  --teal-bg: #04342c;
+  --teal-t: #9fe1cb;
+  --teal-b: #0f6e56;
+  --coral-bg: #4a1b0c;
+  --coral-t: #f5c4b3;
+  --coral-b: #993c1d;
+  --purple-bg: #1e1a4a;
+  --purple-t: #cecbf6;
+  --purple-b: #534ab7;
+  --gold-bg: #412402;
+  --gold-b: #854f0b;
+  --gold: #e8a83a;
+}
+#tbtn {
+  position: fixed;
+  top: 12px;
+  left: 16px;
+  z-index: 150;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 0.5px solid var(--border-2);
+  background: var(--surface);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s;
 }
 
 *,
@@ -345,6 +358,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   opacity: 0;
+  color: var(--text);
   pointer-events: none;
   transition:
     opacity 0.2s,

@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+  <button id="tbtn">☀️</button>
   <div id="prog"></div>
 
   <header class="hd">
@@ -27,7 +27,7 @@
 
   <main class="wrap" id="main"></main>
 
-  <button id="stb" aria-label="اوپر جائیں" style="color: white;">↑</button>
+  <button id="stb" aria-label="اوپر جائیں">↑</button>
 
   <footer>
     یہ مناظرہ فلسفے کی تاریخ کے عظیم مکالمے کی ایک جھلک ہے<br>
@@ -102,6 +102,23 @@
       stb.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
       onScroll();
     })();
+
+    const tb = document.getElementById('tbtn');
+
+    // پہلی بار تھیم سیٹ کریں
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      tb.textContent = '🌙';
+    } else {
+      tb.textContent = '☀️';
+    }
+
+    tb.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      tb.textContent = isDark ? '🌙' : '☀️';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
   </script>
 </body>
 
