@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مناظرہ: خدا کا وجود — کلاسیکی تھی ازم بمقابلہ الحاد</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f9f8f6;
+      --surface: #ffffff;
+      --surface-2: #f4f3f0;
+      --text: #1c1b18;
+      --text-2: #5a5851;
+      --text-3: #8a877e;
+      --border: rgba(0, 0, 0, 0.08);
+      --border-2: rgba(0, 0, 0, 0.14);
+
+      --teal: #1D9E75;
+      --teal-bg: #E1F5EE;
+      --teal-t: #085041;
+      --teal-b: #9FE1CB;
+
+      --coral: #D85A30;
+      --coral-bg: #FAECE7;
+      --coral-t: #712B13;
+      --coral-b: #F5C4B3;
+
+      --purple: #7F77DD;
+      --purple-bg: #EEEDFE;
+      --purple-t: #26215C;
+      --purple-b: #CECBF6;
+
+      --gold: #BA7517;
+      --gold-bg: #FAEEDA;
+      --gold-b: #FAC775;
+
+      --r: 12px;
+      --r-lg: 16px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #181714;
+        --surface: #222118;
+        --surface-2: #2c2b22;
+        --text: #f0ece3;
+        --text-2: #a09b8e;
+        --text-3: #6e6a5f;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-2: rgba(255, 255, 255, 0.14);
+
+        --teal-bg: #04342C;
+        --teal-t: #9FE1CB;
+        --teal-b: #0F6E56;
+
+        --coral-bg: #4A1B0C;
+        --coral-t: #F5C4B3;
+        --coral-b: #993C1D;
+
+        --purple-bg: #26215C;
+        --purple-t: #CECBF6;
+        --purple-b: #534AB7;
+
+        --gold-bg: #412402;
+        --gold-b: #854F0B;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: 'Gulzar', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.85;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Progress */
+    #prog {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(to left, var(--coral), var(--purple), var(--teal));
+      z-index: 200;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.1s linear;
+    }
+
+    /* Header */
+    .hd {
+      background: var(--surface);
+      border-bottom: 0.5px solid var(--border-2);
+      padding: 20px 16px 16px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .hd h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .hd .sub {
+      font-size: 0.82rem;
+      color: var(--text-2);
+      margin-bottom: 10px;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 0.5px solid transparent;
+    }
+
+    .bt {
+      background: var(--teal-bg);
+      color: var(--teal-t);
+      border-color: var(--teal-b);
+    }
+
+    .ba {
+      background: var(--coral-bg);
+      color: var(--coral-t);
+      border-color: var(--coral-b);
+    }
+
+    .bn {
+      background: var(--purple-bg);
+      color: var(--purple-t);
+      border-color: var(--purple-b);
+    }
+
+    /* Container */
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 12px 60px;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--surface);
+      border: 0.5px solid var(--border-2);
+      border-radius: var(--r-lg);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .toc-hd {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: var(--r);
+      font-size: 0.82rem;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+      text-decoration: none;
+    }
+
+    .toc-item:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .toc-n {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--gold-bg);
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--gold-b);
+    }
+
+    /* Round */
+    .round {
+      margin-bottom: 28px;
+    }
+
+    .round-hd {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .round-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--gold-bg);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1.5px solid var(--gold-b);
+    }
+
+    .round-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Message Card */
+    .card {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      border: 0.5px solid var(--border);
+      padding: 16px;
+      margin-bottom: 10px;
+    }
+
+    .card.theist {
+      border-right: 3px solid var(--teal);
+    }
+
+    .card.atheist {
+      border-right: 3px solid var(--coral);
+    }
+
+    .card.neutral {
+      border-right: 3px solid var(--purple);
+    }
+
+    .role {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .role.theist {
+      background: var(--teal-bg);
+      color: var(--teal-t);
+    }
+
+    .role.atheist {
+      background: var(--coral-bg);
+      color: var(--coral-t);
+    }
+
+    .role.neutral {
+      background: var(--purple-bg);
+      color: var(--purple-t);
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot.theist {
+      background: var(--teal);
+    }
+
+    .dot.atheist {
+      background: var(--coral);
+    }
+
+    .dot.neutral {
+      background: var(--purple);
+    }
+
+    .msg {
+      font-size: 0.93rem;
+      line-height: 1.95;
+      color: var(--text);
+    }
+
+    .msg p {
+      margin-bottom: 8px;
+    }
+
+    .msg p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Scroll top */
+    #stb {
+      position: fixed;
+      bottom: 24px;
+      left: 16px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 0.5px solid var(--border-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      transform: translateY(8px);
+      z-index: 90;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    #stb.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    #stb:hover {
+      background: var(--surface-2);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 24px 16px;
+      color: var(--text-3);
+      font-size: 0.78rem;
+      border-top: 0.5px solid var(--border);
+      line-height: 1.9;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .round {
+      animation: fadeUp 0.4s ease-out both;
+    }
+
+    @media (max-width: 480px) {
+      .hd h1 {
+        font-size: 1.2rem;
+      }
+
+      .msg {
+        font-size: 0.88rem;
+      }
+
+      .round-title {
+        font-size: 0.92rem;
+      }
+
+      .card {
+        padding: 14px;
+      }
+    }
+
+    @media print {
+
+      #prog,
+      #stb {
+        display: none;
+      }
+
+      .hd {
+        position: static;
+      }
+
+      .card {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="prog"></div>
+
+  <header class="hd">
+    <h1>مناظرہ: خدا کا وجود</h1>
+    <p class="sub">کلاسیکی تھی ازم بمقابلہ فلسفیانہ الحاد</p>
+    <div class="badges">
+      <span class="badge bt">مؤمن — تھی ازم</span>
+      <span class="badge ba">ملحد فلسفی</span>
+      <span class="badge bn">غیر جانبدار مبصر</span>
+    </div>
+  </header>
+
+  <main class="wrap" id="main"></main>
+
+  <button id="stb" aria-label="اوپر جائیں" style="color: white;">↑</button>
+
+  <footer>
+    یہ مناظرہ فلسفے کی تاریخ کے عظیم مکالمے کی ایک جھلک ہے<br>
+    Aquinas · Leibniz · Hume · Kant اور جدید مفکرین کی روایت میں
+  </footer>
+
+  <script src="debate-data.js"></script>
+  <script>
+    (function () {
+      const main = document.getElementById('main');
+      const prog = document.getElementById('prog');
+      const stb = document.getElementById('stb');
+
+      /* TOC */
+      const toc = document.createElement('div');
+      toc.className = 'toc';
+      toc.innerHTML = '<div class="toc-hd">فہرستِ مباحثہ</div>';
+      const tocList = document.createElement('div');
+      DEBATE_DATA.forEach((r, i) => {
+        const a = document.createElement('a');
+        a.className = 'toc-item';
+        a.href = '#r' + i;
+        a.innerHTML = `<span class="toc-n">${i + 1}</span><span>${r.title}</span>`;
+        tocList.appendChild(a);
+      });
+      toc.appendChild(tocList);
+      main.appendChild(toc);
+
+      /* Rounds */
+      DEBATE_DATA.forEach((round, i) => {
+        const div = document.createElement('div');
+        div.className = 'round';
+        div.id = 'r' + i;
+        div.style.animationDelay = (i * 0.06) + 's';
+
+        const hd = document.createElement('div');
+        hd.className = 'round-hd';
+        hd.innerHTML = `<span class="round-num">${i + 1}</span><span class="round-title">${round.title}</span>`;
+        div.appendChild(hd);
+
+        round.messages.forEach(msg => {
+          const card = document.createElement('div');
+          card.className = 'card ' + msg.role;
+
+          const role = document.createElement('div');
+          role.className = 'role ' + msg.role;
+          role.innerHTML = `<span class="dot ${msg.role}"></span>${msg.label}`;
+
+          const content = document.createElement('div');
+          content.className = 'msg';
+          content.innerHTML = '<p>' + msg.content
+            .replace(/\n\n/g, '</p><p>')
+            .replace(/\n/g, '<br>') + '</p>';
+
+          card.appendChild(role);
+          card.appendChild(content);
+          div.appendChild(card);
+        });
+
+        main.appendChild(div);
+      });
+
+      /* Scroll */
+      function onScroll() {
+        const s = window.scrollY;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        const p = h > 0 ? s / h : 0;
+        prog.style.transform = 'scaleX(' + p + ')';
+        stb.classList.toggle('show', s > 300);
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      stb.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      onScroll();
+    })();
+  </script>
+</body>
+
+</html>
